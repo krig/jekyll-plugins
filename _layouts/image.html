@@ -1,0 +1,30 @@
+---
+layout: post
+---
+
+<div class="row">
+<div class="centered">
+
+<a id="fancybox" href="{{page.image}}" title="{{page.title}}">
+{% if page.preview %}<img src="{{page.preview}}" alt="{{page.title}}" />{% else %}<img src="{{page.image}}" alt="{{page.title}}" />{% endif %}
+</a>
+
+</div>
+</div>
+
+<div class="row">
+<div class="fourteen columns offset-by-one">
+{{content}}
+</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#fancybox").fancybox({
+        'titlePosition'  : 'over',
+        'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">' + title + ' (<a href="{{page.image}}">download</a>)</span>';
+        }
+    });
+});
+</script>

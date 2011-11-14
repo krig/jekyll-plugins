@@ -1,0 +1,12 @@
+---
+layout: page
+---
+
+<h1>Tagged posts</h1>
+<p>Posts tagged with '{{page.tag}}'</p>
+
+<ul>
+{% for p in page.collated_posts %}
+  <li><a href='{{ p.url }}'>{{ p.title }}</a></li>
+{% endfor %}
+</ul>
